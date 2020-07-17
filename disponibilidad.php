@@ -117,6 +117,7 @@ $listaEstatus = mostrarDatos('estatus');
 					<option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
 					<option value="Rescate">Rescate</option>
 					<option value="Siniestro">Siniestro</option>
+					<option value="Consignados">Consignados</option>
 				</select>
 				<!--alerta para registros vacios-->
 				<?php if(isset($_SESSION['errores']['motivo'])): ?>
