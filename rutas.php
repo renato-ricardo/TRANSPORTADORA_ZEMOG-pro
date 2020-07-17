@@ -1,42 +1,221 @@
-<?php 
+<?php
 
+//Declaracion de includes
 require 'includes/redireccion.php';
-require 'includes/layout/header.php';
+require_once 'includes/tipoUsuario.php';
+require_once 'includes/funcionesDisponibilidad.php';
 
+//Instancia de Funciones
+$funciones = new rutasFunciones();
 
-
+//Declaracion de variables
+$idEstatus = isset($_POST['estatusId']) ? $_POST['estatusId'] : "vacio";
+//Casting de Variable 
+$usuarios = (int) $_SESSION['user']['sucursal'];
+$listaDisponibles = $funciones->mostrarTodo();
+/*
+$listaUnidades = mostrarComboUnidadDisponibilidad('unidades',$usuarios);
+//Funcion para mostrar sucursales en comboBox
+$listaSucursales = mostrarBaseCombo('sucursales',$usuarios);
+//Funciones para mostrar registros de Disponibles
+$listaDisponibles = $funciones->mostrarDisponibles($usuarios,$idEstatus);
+//Funcion para mostrar en comboBox los talleres
+$listaTalleres = mostrarDatos("talleres");
+//Funcion para mostrar en combobox los estatus
+$listaEstatus = mostrarDatos('estatus');*/
  ?>
 
 
-<?php $listaRutas = $funcionesRuta->mostrarTodo(); ?>
-
-<?php require_once 'dashboard/Unidadesdashboard.php'; ?>
 
 <div class="card-header">
-	<h3>Registro de Rutas</h3>
+	<h3>Registro de Disponibilidad</h3>
 </div>
- 
+
+
+<!--alerta para registros repetido-->
+
+<?php if(isset($_SESSION['registroRepetido'])): ?>
+	<div class="alert alert-warning alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
+		<?php echo isset($_SESSION['registroRepetido']) ? $_SESSION['registroRepetido'] : ""; ?>
+	</div>
+​<?php endif; ?>    
+
+<!--alerta para registros Ingresado-->
+
+<?php if(isset($_SESSION['completo'])): ?>
+	<div class="alert alert-success alert-dismissible">
+	  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	      <h5><i class="icon fas fa-check"></i> Alert!</h5>
+		<?php echo isset($_SESSION['completo']) ? $_SESSION['completo'] : ""; ?> 
+	</div>
+<?php endif; ?>
+
+<!--alerta para eliminacion de Registros -->
+
+<?php if(isset($_SESSION['completado'])): ?>
+	<div class="alert alert-success alert-dismissible">
+	  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	      <h5><i class="icon fas fa-check"></i> Alert!</h5>
+	        <?php echo isset($_SESSION['completo']) ? $_SESSION['completo'] : ""; ?> 
+	</div>
+<?php endif; ?>
+
 <div class="card-body">
-			<form action="guardarRutas.php" method="post" autocomplete="off">
-				<div class=row>
-					<div class="col-md-3">
-						<label>Nombre de la sucursal :</label>
-						<input class="form-control" type="text" name="nombre" placeholder="Ingresa el nombre de la sucursal" value="<?php echo isset($nombre) ? $nombre : "";?>">
-						<div class="errores">
-							<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['nombre'] : "";?>
-						</div>
+	<form action="guardarDisponibilidad.php" method="POST" autocomplete="off">
+		<div class="row">
+
+			<div class="col-md-3">
+				<label>Unidad :</label>
+				<select name="economico" class="form-control" id="miunidad">
+					<?php if(isset($_SESSION['error_guardar']['economico'])): ?>
+					<option><?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['economico'] :false; ?></option>
+				<?php endif; ?>
+					<option value="vacio">Seleccione un economico</option>
+					<?php foreach($listaUnidades as $row): ?>
+					<option value="<?php echo $row['id']; ?>"><?= $row['economico'] ?></option>
+					<?php endforeach; ?>
+				</select>
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['economico'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['economico'] : "" ?>
 					</div>
-				</div>	
-
-					<div class="row">
-						<div class="btn btn-group-sm">
-							<button class="btn btn-primary" type="submit" name="btnGuardar" value="Guardar">Guardar</button>
-						</div>
-					</div>				
+				<?php endif; ?>								
+			</div>
+			<div class="col-md-3">
+				<label>Fecha de Ingreso :</label>
+				<input type="date" name="fechaIngreso" class="form-control" value="<?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['fechaIngreso'] : false; ?>">
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['fechaIngreso'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['fechaIngreso'] : "" ?>
+					</div>
+				<?php endif; ?>						
+			</div>
+			<div class="col-md-3">
+				<label>Fecha Promesa :</label>
+				<input type="date" name="fechaPromesa" class="form-control"  value="<?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['fechaPromesa'] : false; ?>" >
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['fechaPromesa'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['fechaPromesa'] : "" ?>
+					</div>
+				<?php endif; ?>						
+			</div>
 			
-		</form>		
+			<div class="col-md-3">
+				<label>Motivo :</label>
+				<select name="motivo" id="motivo" class="form-control" >
+					<?php if(isset($_SESSION['error_guardar']['motivo'])): ?>
+					<option value="<?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['motivo'] : false ?>"><?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['motivo'] : false; ?></option>
+				<?php endif; ?>
+					<option value="vacio">Selecciona un motivo</option>
+					<option value="Garantia">Garantia</option>
+					<option value="Mantenimiento Correctivo">Mantenimiento Correctivo</option>
+					<option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
+					<option value="Rescate">Rescate</option>
+					<option value="Siniestro">Siniestro</option>
+					<option value="Consignados">Consignados</option>
+				</select>
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['motivo'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['motivo'] : "" ?>
+					</div>
+				<?php endif; ?>						
+			</div>
+			<div class="col-md-3">
+				<label>Taller</label>
+				<select name="talleres" class="form-control" id="talleres">
+					<?php if(isset($_SESSION['error_guardar']['talleres'])): ?>
+					<option><?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['talleres']:false; ?></option>
+				<?php endif; ?>
+					<option value="vacio">Selecciona un taller</option>
+					<?php foreach($listaTalleres as $row): ?>	
+					<option value="<?php echo $row['id'] ?>"><?php echo $row['nombre'] ?></option>	
+					<?php endforeach; ?>
+				</select>
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['taller'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['taller'] : "" ?>
+					</div>
+				<?php endif; ?>						
+			
+			</div>
 
+			<div class="col-md-3">
+				<label>Folio de Reporte</label>
+				<input type="text" name="folio" placeholder="Ingresa el folio de reporte" class="form-control" value="<?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['folio'] : false; ?>">
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['folio'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['folio'] : "" ?>
+					</div>
+				<?php endif; ?>						
+			</div>
+			<div class="col-md-3">
+				<label>Costo </label>
+				<input class="form-control" type="text" name="costo" placeholder="Costo" value="<?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['costo'] : false; ?>">
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['costo'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['costo'] : "" ?>
+					</div>
+				<?php endif; ?>						
+			</div>
+			<div class="col-md-3">
+				<label>Estatus : </label>
+				<select class="form-control" name="estatus" id="estatus">
+					<?php if(isset($_SESSION['error_guardar']['estatus'])): ?>
+					<option><?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['estatus'] : false; ?></option>
+				<?php endif; ?>
+					<option value="vacio">Selecciona un estatus :</option>
+					<?php foreach($listaEstatus as $row): ?>
+						<option value="<?= $row['id']?>"><?=$row['nombreEstatus']?></option>
+					<?php endforeach; ?>
+				</select>
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['estatus'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['estatus'] : "" ?>
+					</div>
+				<?php endif; ?>						
+			</div>
+			<div  class="col-md-12">
+				<label>Descripcion de la Falla :</label>
+				<textarea name="comentario" class="form-control" rows="3" placeholder="Ingresa tu comentario ..."><?php echo isset($_SESSION['error_guardar']) ? $_SESSION['error_guardar']['comentario'] : false; ?></textarea>
+				<!--alerta para registros vacios-->
+				<?php if(isset($_SESSION['errores']['descripcion'])): ?>
+					<div class="alert alert-warning">
+				<?php echo isset($_SESSION['errores']) ? $_SESSION['errores']['descripcion'] : "" ?>
+					</div>
+				<?php endif; ?>								
+			</div>
+	<div class="row">
 
+	
+		<div class="btn btn-group-sm">
+			<button class="btn btn-primary" type="submit" name="btnGuardar" value="Guardar">Guardar
+			</button>
+	
+			<a href="reporteExcel/ExcelRutas.php" type="button" class="btn btn-success" style="margin-right: 5px;">
+                <i class="fas fa-download"></i> Generar Excel
+             </a>
+			 <?php if($_SESSION['user']['categoria']==1 || $_SESSION['user']['categoria'] == 4): ?>
+			<a href="reporteExcel/ExcelCoorporativo.php" type="button" class="btn btn-success" style="margin-right: 5px;">
+                <i class="fas fa-download"></i> disponibilidad Coorporativo
+             </a>
+			 <?php endif; ?>		
+		</div>
+	</div>
+
+</form>	
+</div>
+
+<h3>Tabla de Rutas</h3>
 
 <div class="completo">
 <?php echo isset($_SESSION['completo']) ? $_SESSION['completo'] : ""; ?>
@@ -46,31 +225,94 @@ require 'includes/layout/header.php';
 <?php echo isset($_SESSION['completado']) ? $_SESSION['completado'] : ""; ?>
 </div>
 
-	<table class="table table">
-		<tr>
-			<th>Id</th>
-			<th>Nombre</th>
-			<th>Accion Eliminar</th>	
-			<th>Accion Seleccion</th>
+<!---Formulario para filtro avanzado--->
+<?php 
+//Validacion para que solo el admin pueda ver los filtros
+if($_SESSION['user']['categoria'] == 1) : ?>
+
+	<form action="" method="post"> 
+		<div class="col-md-4">
+			<div class="alert alert-warning">
+				<small>Para mostrar todos los registros agrega "Selcciona un estatus"</small>
+			</div>
+		</div>
+		<label>Estatus : </label>
+			<select name="estatusId" id="estatus">
+				<option value="vacio">Seleccion un estatus :</option>
+					<?php foreach($listaEstatus as $row): ?>
+						<option value="<?= $row['id']?>"><?=$row['nombreEstatus']?></option>
+					<?php endforeach; ?>
+				</select>
+
+		<button type="submit" name="enviar">Buscar</button>
+	</form>
 	
-		</tr>
-		<?php foreach($listaRutas as $rows): ?>
+<?php endif; ?>
+
+<!---Formulario para filtro avanzado--->
+
+
+<div class="box-body">
+
+
+<div class="card-footer">	
+
+	<table id="table_id" class="table table-bordered table-hover">
+		<thead>
 		<tr>
-			<td><?php echo $rows['id']; ?></td>
-			<td><?php echo $rows['nombre']; ?></td>
-			<td><a class="btn btn-danger" onclick="preguntar(<?php echo $rows['id']; ?>);" class="botonEliminar" href="">Eliminar</a></td>
-			<td><a class="btn btn-warning" onclick="confirm('Deseas eliminar el registro');" class="botonSeleccionar" href="actualizarSucursal.php?id=<?php echo $rows['id']; ?>">Seleccionar</a></td>
+
+			<th>TipoEquipo</th>	
+			<th>DescripcionOrigen</th>	
+			<th>claseExpedicion</th>
+			<th>llave</th>
+			<th>Formato</th>
+			<th>Tarifa</th>
+			<th>Kilometros</th>
+			<th>Zona Destino</th>
+			<!--<th>Descripcion</th>-->
+			<th>Acciones</th>
+			<th>Acciones</th>
+		</tr>
+		</thead>
+		<tbody>
+		<?php foreach($listaDisponibles as $rows): ?>
+		<tr>
+
+	
+			<td><?php echo $rows['tipoEquipo']; ?></td>
+			<td><?php echo $rows['descripcionOrigen']; ?></td>
+			<td><?php echo $rows['claseExpedicion']; ?></td>
+			<td><?php echo $rows['llave']; ?></td>
+			<td><?php echo $rows['formatoViaje']; ?></td>
+			<td><?php echo $rows['tarifaZemog']; ?></td>
+			<td><?php echo $rows['kmsRedondos']; ?></td>
+			<td><?php echo $rows['zonaDestino']; ?></td>
+			
+		<td>
+				<a href="#" onclick="preguntar(<?php echo $rows['id'] ?>);"  class="btn btn-danger"><i class="fas fa-trash"></i></a>
+			</td>
+			<td>
+	            <a href="actualizarDisponibilidad.php?id=<?php echo $rows['id']; ?>" class="btn btn-info"><i class="fas fa-eye"></i></a>
+			</td>
 		</tr>
 	<?php endforeach; ?>
-		
-	</table>	
+		</tbody>
+	</table >	
+</div>
+</div>
 
-  </div>
 	<script type="text/javascript">
 			
+			function seleccion(){
+				var sucursal = document.getElementById('sucursales').value;
+
+				alert("Riacrdo");
+			}
+
+
 			function preguntar(id){
 
-			var mensaje = Swal.fire({
+			var mensaje =Swal.fire({
 				  title: 'Deseas Eliminar el registro?',
 				  text: "Estas segurdo de eliminar el datos Seleccionadp",
 				  icon: 'warning',
@@ -80,7 +322,7 @@ require 'includes/layout/header.php';
 				  confirmButtonText: 'Eliminar Registro'
 				}).then((result) => {
 				  if (result.value) {
-				  	window.location.href = "eliminarRutas.php?id="+id;
+				  	window.location.href = "eliminarDisponibilidad.php?id="+id;
 				    Swal.fire(
 				      'Deleted!',
 				      'Your file has been deleted.',
@@ -88,11 +330,11 @@ require 'includes/layout/header.php';
 				    )
 				  }
 				})				
+
 			}
 
-
-	</script>
-
+</script>
+	
 
 
 <?php require 'includes/layout/footer.php'; ?>

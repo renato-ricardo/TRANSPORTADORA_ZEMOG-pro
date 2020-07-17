@@ -20,7 +20,7 @@ class funcionesDisponibilidad{
 			$estatus_Taller = $motivo;
 		}
 
-		
+
 
 
 		
@@ -162,6 +162,7 @@ class funcionesDisponibilidad{
 				inner join estatus es on dp.estatus_id = es.id
 				inner join operaciones op on sc.operaciones_id = op.id 
 				WHERE es.nombreEstatus  !='Terminada' and es.nombreEstatus !='Terminada bajo reserva' ORDER BY DiasFuera DESC;";*/
+				
 				}else{
 
 					$sql = "SELECT dp.id, uni.economico,dp.descripcionFalla,sc.nombreModelo,op.nombreOperacion,dp.fechaIngreso,dp.fechaPromesa,dp.fechaEntrega,dp.motivo,dp.costoReparacion,if(estatus_id = 9 or estatus_id = 10,datediff(fechaEntrega,fechaIngreso),datediff(now(),fechaIngreso)) as DiasFuera,es.nombreEstatus FROM disponibilidad dp

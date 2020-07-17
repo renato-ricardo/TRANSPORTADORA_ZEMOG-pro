@@ -50,7 +50,7 @@ class rutasFunciones {
 
 	public function mostrarTodo(){
 		$conexion = new db();
-		$sql = "SELECT * FROM rutas";
+		$sql = "SELECT * FROM rutas LIMIT 10";
 		$stmt = $conexion->prepare($sql);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -187,7 +187,7 @@ $funcionesTalleres = new talleresFunciones();
                 <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">       
                   <!-- End Level three -->
                   <li><a href="talleres.php" class="dropdown-item disabled">Captura de Viático</a></li>
-                  <li><a href="rutasCompartidas.php" class="dropdown-item disabled">Compartir Rutas</a></li>
+                  <li><a href="rutas.php" class="dropdown-item ">Rutas</a></li>
 
                 </ul>
               </li>

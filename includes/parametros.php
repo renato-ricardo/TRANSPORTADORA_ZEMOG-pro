@@ -10,7 +10,7 @@
 //define('url', 'http://187.189.71.128/TransportadoraZemog/');
 
 
-define('url', 'http://localhost/');
+define('url', 'http://localhost/TRANSPORTADORA_ZEMOG-pro/');
 define('Empresa', 'Transportadora Zemog');
 
 

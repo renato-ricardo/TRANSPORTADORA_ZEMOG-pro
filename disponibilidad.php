@@ -4,8 +4,10 @@
 require 'includes/redireccion.php';
 require_once 'includes/tipoUsuario.php';
 require_once 'includes/funcionesDisponibilidad.php';
+require_once 'includes/rutasFunciones.php';
 
 //Instancia de Funciones
+
 $funciones = new funcionesDisponibilidad();
 
 //Declaracion de variables
