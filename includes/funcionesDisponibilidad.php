@@ -20,7 +20,7 @@ class funcionesDisponibilidad{
 			$estatus_Taller = $motivo;
 		}
 
-
+		
 
 
 		
