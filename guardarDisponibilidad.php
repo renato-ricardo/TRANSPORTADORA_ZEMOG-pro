@@ -10,9 +10,6 @@ $funciones = new funcionesDisponibilidad();
 
 if (isset($_POST)) {
 
-
-
-
 	$economico = isset($_POST['economico']) ? test_input($_POST['economico']) : false;
 
 	//$sucursal = isset($_POST['sucursal']) ? test_input($_POST['sucursal']) : false;
@@ -34,6 +31,18 @@ if (isset($_POST)) {
 	$descripcion = isset($_POST['comentario']) ? test_input($_POST['comentario']) : false;	
 
 	$estatus = isset($_POST['estatus']) ? test_input($_POST['estatus']):"";
+
+	$estatus_Taller = ""; 
+
+	if($motivo == "Consignados"){
+		$costo =0;
+		$folio = "Sin folio";
+		//$folio = "FConsigna";
+		$costo = $costo + 1;
+
+		//$taller = 'Sin taller por consigna';
+	}
+
 
 	$errores = array();
 
@@ -80,7 +89,7 @@ if (isset($_POST)) {
 		$validacion_folio = true;
 	}
 
-	if (empty($costo)) {
+	if (empty($costo) || !is_numeric($costo) ) {
 		$errores['costo'] = "Casilla de costo esta vacia";
 	}else{
 		$validacion_costo = true;
@@ -101,9 +110,9 @@ if (isset($_POST)) {
 
 	if (count($errores) == 0) {
 		
-			$validacion = $funciones->save($fechaIngreso,$fechaPromesa,$fechaEntrega,$motivo,$descripcion,$folio,$costo,$estatus,$taller,$economico);
+			$validacion = $funciones->save($fechaIngreso,$fechaPromesa,$fechaEntrega,$motivo,$descripcion,$folio,$costo,$estatus,$taller,$economico,$estatus_Taller);
 			
-	
+			
 
 		if ($validacion) {
 
@@ -118,7 +127,6 @@ if (isset($_POST)) {
 		}
 
 	}else{
-			$_SESSION['error_guardar'] = $_POST;
 
 			$_SESSION['errores'] = $errores;
 			header("location:disponibilidad.php");
