@@ -31,9 +31,8 @@ class metricasFunciones{
 		RIGHT JOIN unidades uni ON uni.id = dp.unidades_id
 		RIGHT JOIN sucursales sc ON sc.id =uni.sucursales_id
 		RIGHT JOIN operaciones op ON op.id = uni.operaciones_id
-		WHERE op.id != 1 AND op.id != 4 AND op.id !=6
-		GROUP BY sc.nombreSucursal ORDER BY op.nombreOperacion,sc.nombreSucursal ASC";
-
+WHERE op.id != 1 AND op.id != 4 AND op.id !=6 AND dp.estatus_id != 9 AND dp.estatus_id !=10
+GROUP BY sc.nombreSucursal ORDER BY op.nombreOperacion,sc.nombreSucursal ASC";
 
 		$staments = $conexion->query($sql);
 		$staments->execute();
