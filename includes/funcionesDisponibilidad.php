@@ -6,12 +6,27 @@ require_once 'db.php';
 class funcionesDisponibilidad{
 
 
-	public function save($fechaIngreso,$fechaPromesa,$fechaEntrega,$motivo,$descripcionFalla,$folioReporte,$costoReparacion,$estatus_id,$talleres_id,$unidades_id){
+	public function save($fechaIngreso,$fechaPromesa,$fechaEntrega,$motivo,$descripcionFalla,$folioReporte,$costoReparacion,$estatus_id,$talleres_id,$unidades_id,$estatus_Taller){
 	
 		$conexion = new db();
 
-	
-		$sql = "INSERT INTO `disponibilidad` (`id`, `fechaIngreso`, `fechaPromesa`, `fechaEntrega`, `motivo`, `descripcionFalla`, `folioReporte`, `costoReparacion`, `estatus_id`, `talleres_id`, `unidades_id`) VALUES (NULL,:fechaInicio,:fechaPro,:fechaEn,:mot,:comentario,:folio,:costo,:status,:taller,:unidad);";
+		if($motivo == 'Garantia'){
+			$estatus_Taller = "Taller";
+		}else if($motivo == "Mantenimiento Correctivo"){
+			$estatus_Taller = "Taller";
+		}else if($motivo == "Mantenimiento Preventivo"){
+			$estatus_Taller = "Taller";
+		}else{
+			$estatus_Taller = $motivo;
+		}
+
+
+
+
+		
+
+		$sql = "INSERT INTO `disponibilidad` (`id`, `fechaIngreso`, `fechaPromesa`, `fechaEntrega`, `motivo`, `descripcionFalla`, `folioReporte`, `costoReparacion`, `estatus_id`, `talleres_id`, `unidades_id`,`estatus_Taller`) 
+		VALUES (NULL,:fechaInicio,:fechaPro,:fechaEn,:mot,:comentario,:folio,:costo,:status,:taller,:unidad,:estatus_Talleres);";
 
 
 		$stmt = $conexion->prepare($sql);
@@ -26,7 +41,8 @@ class funcionesDisponibilidad{
 		$stmt->bindValue(':status',$estatus_id);
 		$stmt->bindValue(':taller',$talleres_id);
 		$stmt->bindValue(':unidad',$unidades_id);
-	
+		$stmt->bindValue(':estatus_Talleres',$estatus_Taller);
+		
 
 		$validacion =$stmt->execute();
 
@@ -42,15 +58,17 @@ class funcionesDisponibilidad{
 
 	}
 
-	public function update($id,$economico,$sucursal,$fechaIngreso,$fechaPromesa,$fechaEntrega,$motivo,$taller,$folio,$costo,$motivo2,$comentarios){
+	public function update($id,$economico,$sucursal,$fechaIngreso,
+		$fechaPromesa,$fechaEntrega,$motivo,$taller,$folio,$costo,$motivo2,$comentarios,$estatus_Taller){
 	
 		$conexion = new db();
 
-		$sql = "UPDATE disponibilidad SET 
-		fechaIngreso=:fechaInicio,fechaPromesa=:fechaPro,fechaEntrega=:fechaEn,
-		motivo=:mtv,descripcionFalla=:decrip,folioReporte=:folio,costoReparacion=:costo,
-		estatus_id=:idEstatus,talleres_id=:idTalleres,unidades_id=:idUnidades 
-		WHERE id=:ids";
+		$sql = "UPDATE disponibilidad SET fechaIngreso=:fechaInicio,
+		fechaPromesa=:fechaPro,fechaEntrega=:fechaEn,
+		motivo=:mtv,descripcionFalla=:decrip,
+		folioReporte=:folio,costoReparacion=:costo,
+		estatus_id=:idEstatus,talleres_id=:idTalleres,
+		unidades_id=:idUnidades ,estatus_Taller=:statusTaller WHERE id=:ids";
 
 
 		$stmt = $conexion->prepare($sql);
@@ -66,6 +84,7 @@ class funcionesDisponibilidad{
 		$stmt->bindValue(':idEstatus',$motivo2);
 		$stmt->bindValue(':idTalleres',$taller);
 		$stmt->bindValue(':idUnidades',$economico);
+		$stmt->bindValue(':statusTaller',$estatus_Taller);
 	
 		$validacion =$stmt->execute();
 
@@ -78,27 +97,29 @@ class funcionesDisponibilidad{
 
 	}
 
-
 	public function seleccionarPorId($id){
 		$conexion = new db();
 
-		$sql = "SELECT dp.id,dp.descripcionFalla, uni.economico,uni.id as idUnidad,sc.nombreSucursal,sc.id AS idSucursal ,dp.fechaIngreso,dp.fechaPromesa,dp.fechaEntrega,dp.motivo,dp.costoReparacion,datediff(now(),dp.fechaIngreso) as Dias,tl.nombre,tl.id as idTalleres,dp.folioReporte,dp.costoReparacion,es.nombreEstatus,es.id as idEstatus,dp.descripcionFalla FROM disponibilidad dp
+
+
+			$sql = "SELECT dp.id, uni.economico,uni.id as idUnidad,sc.nombreSucursal,sc.id AS idSucursal ,dp.fechaIngreso,dp.fechaPromesa,dp.fechaEntrega,dp.motivo,dp.costoReparacion,datediff(now(),dp.fechaIngreso) as Dias,tl.nombre,tl.id as idTalleres,dp.folioReporte,dp.costoReparacion,es.nombreEstatus,es.id as idEstatus,dp.descripcionFalla FROM disponibilidad dp
 			inner join unidades uni on dp.unidades_id = uni.id
 			inner join talleres tl on dp.talleres_id = tl.id
 			inner join estatus  es on dp.estatus_id = es.id
 			inner join sucursales sc on uni.sucursales_id = sc.id WHERE dp.id=:ids;";
 
-			$stmt = $conexion->prepare($sql);
+	
+		$stmt = $conexion->prepare($sql);
 
-			$stmt->bindValue(':ids',$id);
+		$stmt->bindValue(':ids',$id);
+	
+		$validacion = $stmt->execute();
 
-			$validacion = $stmt->execute();
-
-			if ($validacion) {
-				return $stmt->fetch(PDO::FETCH_LAZY);
-			}else{
-				return false;
-			}
+		if ($validacion) {
+		 	return $stmt->fetch(PDO::FETCH_LAZY);
+		}else{
+			return false;
+		}
 	}
 
 	public function delete($id){
@@ -116,7 +137,6 @@ class funcionesDisponibilidad{
 		}
 
 	}
-
 
 	public function mostrarDisponibles($base,$idEstatus = null){
 			
@@ -247,7 +267,7 @@ class funcionesDisponibilidad{
 				break;
 		}
 
-
+	}
 
 	}	
 
@@ -256,4 +276,3 @@ class funcionesDisponibilidad{
 
 
 	
-}
