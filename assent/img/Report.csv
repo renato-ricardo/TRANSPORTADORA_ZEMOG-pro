@@ -1,0 +1,8 @@
+﻿Economico,"Nombre Sucursal","Fecha Ingreso","Fecha Promesa","Fecha Entrega",Motivo,"Costo por Reparacion","Dias en Detencion",nombreEstatus,Comentarios,"Nombre Operacion",Mad,Operacion
+TZ-157,Juarez,2020-02-11,2020-02-11,2020-02-11,"Mantenimiento Preventivo",4451,0,Terminada,"SERVICIO PREVENTIVO A EL MOTOR A LOS 906,462 KMS. FACT. 18157JBB.",Arca,MOTRIZ,Arca
+TZ-157,Juarez,2020-02-11,2020-02-11,2020-02-11,"Mantenimiento Correctivo",432,0,Terminada,"SE INGRESA PARA REEMPLAZO DE EMPAQUE DE FLECHA LATERAL, DE EL YOYO No. 4. FACT. 18158JBB.",Arca,MOTRIZ,Arca
+TZ-158,Juarez,2020-02-06,2020-02-11,2020-02-12,"Mantenimiento Correctivo",3506,6,Terminada,"No sostiene la carga de el aire en baja (neutralizado) y el indicador de el filtro de el diesel esta muy alto (revisar lineas tapadas o filtros tapados).",Arca,MOTRIZ,Arca
+TZ-158,Juarez,2020-02-14,2020-02-19,2020-02-26,"Mantenimiento Correctivo",4640,12,Terminada,"EL MARCADOR DE EL DIESEL TIENE VARIACIONES ALTAS (SE HACE LIMPIEZA DE LINEAS, REEMPLAZO DE LINEA DE EL DIESEL Y LIMPIEZA DE EL TANQUE DE EL LADO DE EL COPILOTO PARA HABILITARLO).",Arca,MOTRIZ,Arca
+TZ-214,Juarez,2020-02-24,2020-05-24,2020-02-25,"Mantenimiento Correctivo",3334,1,Terminada,"FALLA EN EL ENCENDIDO (SE REEMPLAZA ARNES DE EL SWICH A LA MARCHA).",Arca,MOTRIZ,Arca
+TZ-398,Juarez,2020-02-26,2020-02-26,2020-02-27,"Mantenimiento Correctivo",1000,1,Terminada,"REEMPLAZO DE FILTRO DE EL AGUA (TIRA AGUA) Y RELLENAR DE ANTICONGLEANTE.",Arca,MOTRIZ,Arca
+TZ-436,Juarez,2020-03-02,2020-03-04,,Siniestro,7000,2,"En proceso de reparación","REPARAR DEFENSA LADO DE EL COPILOTO",Arca,MOTRIZ,Arca

@@ -1,0 +1,74 @@
+﻿Economico,"Nombre Sucursal","Fecha Ingreso","Fecha Promesa","Fecha Entrega",Motivo,"Costo por Reparacion","Dias en Detencion",nombreEstatus,Comentarios,"Nombre Operacion",Mad,Operacion
+TZ-175,"Guadalajara Especializado",2020-01-22,2020-03-20,0000-00-00,"Mantenimiento Correctivo",390295,45,"En espera de autorización","Cabeza de motor, media reparacion, turbo, actuador, inyectores. 
+Falla por calentamiento de motor.  UNIDAD SE INGRESA A KW DE JALISCO EN GRUA. PENDIENTE REVISAR AVANCE ",Modelo,MOTRIZ,Modelo
+TZ-128,"Guadalajara Especializado",2020-02-11,2020-03-09,0000-00-00,"Mantenimiento Correctivo",35326,25,"En espera de autorización","Daño en VGT, bomba de direccion, filtro de direccion y kit de separacion PDM. En espera de autorizacion.
+Unidad ingresada a M. Otero. En espera de diagnostico",Modelo,MOTRIZ,Modelo
+4315,Torreon,2020-02-18,2020-03-10,0000-00-00,Siniestro,1,18,"En espera de autorización","PERDIDA DE LONAS POR SINIESTRO (TIRO PRODUCTO)
+EN PROCESO DE NEGOSIACION POR PARTE DE PERSONAL DE SINIESTROS (JAIME CHAUL) Y QUALITAS,",Modelo,ARRASTRE,Modelo
+TZ-151,"Mexico Especializado",2020-01-29,2020-03-07,0000-00-00,"Mantenimiento Correctivo",350000,38,"En espera de autorización","Reparación mayor motor (motor sobre calentado)",Modelo,MOTRIZ,Modelo
+TZ-136,"Guadalajara Especializado",2020-02-28,2020-03-09,0000-00-00,"Mantenimiento Correctivo",18500,8,"En espera de autorización","DAÑO EN SAM CABINA,  EN ESPERA DE AUTORIZACION",Modelo,MOTRIZ,Modelo
+4383,"Mexico Dedicado",2020-02-14,2020-03-31,,"Mantenimiento Correctivo",32000,22,"En espera de autorización","REPARACIÓN MAYOR
+CAMBIO DE PISO--CAMBIO DE ESTRUCTURA DE MAMPARA--CAMBIO DE ALFOMBRA AMBOS LADOS--CAMBIO DE BOTA AGUAS---REPARACION DE LIENZOS--REPARACION DE PARA CHOQUES--REPARACION DE PERFILES.
+NO",Modelo,ARRASTRE,Modelo
+4168,"Mexico Dedicado",2020-02-10,2020-03-13,,"Mantenimiento Correctivo",60,26,"En espera de cotización","FALLA DE FRENOS (DISCO)",Modelo,ARRASTRE,Modelo
+4116,"Mexico Dedicado",2020-03-05,2020-03-07,,"Mantenimiento Preventivo",15000,2,"En espera de cotización","ingresa a MP M2
+revision de cajas tensoras--revision de fuga de aire por bolsas de suspension--rieles de carretillas---cambio de bujes trifoncionales el remolque esta caminando chueco--alineacion, ma",Modelo,ARRASTRE,Modelo
+TZ-204,Tuxtepec,2020-03-06,2020-03-31,0000-00-00,Siniestro,62000,1,"En espera de cotización","Unidad en siniestro con daño en cofre, eje direccional, suspensión delantera (se mueve a taller Reypa Córdoba)",Modelo,MOTRIZ,Modelo
+TZ-182,Tuxtepec,2020-03-06,2020-03-21,,Siniestro,40000,1,"En espera de cotización","Unidad por siniestro con daño en defensa, parrilla, puente de cofre, puente de chasis, postenfriador, radiador de a/c, radiador (se mueve a taller Reypa Córdoba)",Modelo,MOTRIZ,Modelo
+TZ-244,"Mexico Especializado",2020-03-02,2020-03-07,0000-00-00,"Mantenimiento Correctivo",15000,5,"En espera de diagnostico","Revisar funcionamiento fan clutch (no trabaja automático)",Modelo,MOTRIZ,Modelo
+TZ-267,Apan,2020-03-06,2020-03-07,,"Mantenimiento Correctivo",1,1,"En espera de diagnostico","Falla electrica",Modelo,MOTRIZ,Modelo
+4271,Tuxtepec,2020-02-10,2020-03-10,0000-00-00,Siniestro,0,26,"En proceso de reparación","Reparación de remolque por garantía en taller de aseguradora por mala reparación en taller de Cuernavaca",Modelo,ARRASTRE,Modelo
+TZ-115,"Mexico Especializado",2020-01-21,2020-03-11,0000-00-00,"Mantenimiento Correctivo",31200,46,"En proceso de reparación","Reparar inyectores",Modelo,MOTRIZ,Modelo
+4118,"Mexico Dedicado",2020-01-12,2020-03-20,0000-00-00,Siniestro,0,55,"En proceso de reparación","LA UNIDAD SUFRIÓ SINIESTRO EN EL QUE FUIMOS AFECTADOS, NOS VAN A PAGAR LOS DAÑOS PERO JAIME CHAUL NO HA DADO RESPUESTAS SI YA ESTÁN AUTORIZADOS, EL TALLER QUE ES UTILITY YA PASO LA VALUACIÓN PARA EL P",Modelo,ARRASTRE,Modelo
+TZ-120,Tuxtepec,2020-02-28,2020-03-07,0000-00-00,"Mantenimiento Correctivo",4500,8,"En proceso de reparación","Corregir fuga de aceite en junta de campana",Modelo,MOTRIZ,Modelo
+TZ-350,Zacatecas,2020-02-08,2020-03-26,0000-00-00,"Mantenimiento Correctivo",215515,28,"En proceso de reparación","Media reparación de motor por desgaste de componentes ",Modelo,MOTRIZ,Modelo
+4255,"Mexico Dedicado",2020-02-12,2020-03-12,,"Mantenimiento Correctivo",32000,24,"En proceso de reparación","REPARACION MAYOR
+CAMBIO DE PISO--CAMBIO DE TODA LA ESTRUCTURA DE MAMPARA-CAMBIO DE BOTA AGUAS---CAMBIO DE ALFOMBRA POR AMBOS LADOS---REPARACION DE PARA CHOQUES--REPARACION DE PERFILES TRASEROS Y DELA",Modelo,ARRASTRE,Modelo
+4338,Torreon,2020-03-05,2020-03-06,,"Mantenimiento Correctivo",1,2,"En proceso de reparación","CAMBIO DE 04 AMORTIGUADORES DE SUSPENCION DAÑADOS, 04 BARRA GAVILÁN DE 1 1/2&quot; X 20 3/4&quot; DAÑADAS, BUJES DE BARRA GAVILÁN, CAMBIO DE RETENES (373-0123)",Modelo,ARRASTRE,Modelo
+DH-120,Torreon,2020-03-05,2020-03-06,,"Mantenimiento Correctivo",1,2,"En proceso de reparación","CAMBIO DE 02 AMORTIGUADORES DAÑADOS, CAMBIO DE BUJES DE BARRA GAVILÁN, CAMBIO DE DOS MATRACAS AUTO-AJUSTABLES ESTRIADO FINO.",Modelo,DOLLY,Modelo
+4310,"Guadalajara Especializado",2020-03-05,2020-03-06,,"Mantenimiento Preventivo",1800,2,"En proceso de reparación","SERVICIO M1, EN PROCESO DE REEMPLAZO DE AMORTIGUADORES Y 2 BALEROS",Modelo,ARRASTRE,Modelo
+TZ-248,Tuxtepec,2020-03-06,2020-03-07,0000-00-00,"Mantenimiento Correctivo",1,1,"En proceso de reparación","Checar niveles, tacones de motor, zepelines",Modelo,MOTRIZ,Modelo
+TZ-257,Tuxtepec,2020-03-06,2020-03-06,,"Mantenimiento Correctivo",500,1,"En proceso de reparación","Checar indicador de temperatura de transmisión",Modelo,MOTRIZ,Modelo
+TZ-333,"Guadalajara Especializado",2020-03-02,2020-03-07,0000-00-00,"Mantenimiento Correctivo",8500,5,"En proceso de diagnostico","BOMBA DE ACEITE CON BAJA PRESION. KW COMENTA QUE LA PRESION ESTA DENTRO DE ESPECIFICACIONES, MANDARAN REPORTE TECNICO Y PENDIENTE CONFIRMEN SI VAMOS POR LA UNIDAD.  EL CONSUMO DE ACEITE COMENTA KW QUE",Modelo,MOTRIZ,Modelo
+TZ-270,"Mexico Especializado",2020-03-03,2020-03-06,,Siniestro,1,4,"En proceso de diagnostico","Golpe frontal, daño en cofre, parrilla, defensa, radiador",Modelo,MOTRIZ,Modelo
+TZ-149,Torreon,2020-03-04,2020-03-07,0000-00-00,"Mantenimiento Correctivo",1,3,"En proceso de diagnostico","UNIDAD PRESENTA CONTAMINACIÓN DE DIÉSEL EN EL AGUA.
+(PASO DIÉSEL AL DEPOSITO DE ANTICONGELANTE)
+SE ENVIARA A MEGAMAK PARA REVISAR TEMA DE GARANTÍA YA QUE LA UNIDAD SALIO DE REPARACIÓN DE CON ELLOS.",Modelo,MOTRIZ,Modelo
+TZ-322,Torreon,2020-03-06,2020-03-07,0000-00-00,"Mantenimiento Correctivo",1,1,Programado,"REVISAR TRANSMISIÓN (OPERADOR COMENTA QUE SIENTE QUE GOLPEA COMO SI BRINCARA UN CAMBIO)",Modelo,MOTRIZ,Modelo
+TZ-319,Torreon,2020-03-06,2020-03-07,,"Mantenimiento Correctivo",7000,1,Programado,"CAMBIO DE SOPORTES DE MOTOR",Modelo,MOTRIZ,Modelo
+TZ-320,Torreon,2020-01-23,2020-03-06,2020-03-06,Siniestro,68853,43,"Terminada bajo reserva","Golpe en cofre lado derecho por siniestro, daño en defensa, faro principal derecho y cofre completo.",Modelo,MOTRIZ,Modelo
+TZ-319,Torreon,2020-03-02,2020-03-04,2020-03-04,"Mantenimiento Correctivo",1,2,"Terminada bajo reserva","CAMBIO DE SOPORTES DE MOTOR EN AGENCIA CAMIONES Y TRACTO CAMIONES DE SONORA (PENDIENTE TRASLADO A LA AGENCIA)
+CAMBIO DE CRISTAL DE PUERTA LADO COPILOTO POR SINIESTRO (PENDIENTE TRASLADO AL TALLER) FO",Modelo,MOTRIZ,Modelo
+TZ-408,"Mexico Dedicado",2020-03-06,2020-03-06,2020-03-06,"Mantenimiento Correctivo",0,0,"Terminada bajo reserva","OPERADOR REPORTA QUE AL IR CIRCULANDO SE LE CAE LA PRESION DEL AIRE. SE DESVIA A SIS DIESEL PARA SU DIAGNOSTICO SI ES TEMA DEL REMOLQUE SE REPARAR AHI CON ELLOS PERO SI ES TEMA DEL TRACTO SE LLEVARA A",Modelo,MOTRIZ,Modelo
+TZ-130,Hermosillo,2020-02-18,2020-03-07,0000-00-00,"Mantenimiento Correctivo",5000,18,"En espera de dictamen de garantia","Posible corto en linea de control crucero y fan clutch directo. No encuentran la falla, esta desarmado el tablero y estamos en espera de retroalimentación.",Arca,MOTRIZ,Arca
+TZ-127,Hermosillo,2019-06-15,2020-03-16,0000-00-00,"Mantenimiento Correctivo",190000,266,"En espera de autorización","Media reparación por desgaste de componentes debido a contaminación de refrigerante en el aceite de motor.",Arca,MOTRIZ,Arca
+TZ-216,Chihuahua,2020-02-27,2020-03-07,0000-00-00,"Mantenimiento Correctivo",14000,9,"En espera de autorización","Reemplazo de balatas y tambores tandem trasero.",Arca,MOTRIZ,Arca
+TZ-222,Hermosillo,2020-03-05,2020-03-07,0000-00-00,"Mantenimiento Correctivo",7338,2,"En espera de autorización","La unidad llego de viaje presentando fuga de aire y se mando con el proveedor detectando dos bolas de aire dañadas y amortiguadores en mal estado. Ya se mando la cotización por correo y estamos en esp",Arca,MOTRIZ,Arca
+TZ-434,"La paz",2020-03-05,2020-03-15,0000-00-00,"Mantenimiento Correctivo",0,2,"En espera de autorización","Desgaste irregular de llantas delanteras, TZ434, cambio de pasador KING PING. se podria promover aun por garantía?",Arca,MOTRIZ,Arca
+TZ-292,Nogales,2020-02-21,2020-03-06,0000-00-00,"Mantenimiento Correctivo",40000,15,"En espera de cotización","Turbo dañado y VGT.",Arca,MOTRIZ,Arca
+TZ-110,"La paz",2020-01-06,2020-03-10,0000-00-00,"Mantenimiento Correctivo",12000,61,"En espera de cotización","Fuga de aceite de motor por concha trasera. diagnostican el clutch tiene resortes quebrados. ",Arca,MOTRIZ,Arca
+TZ-134,Durango,2020-03-05,2020-03-07,0000-00-00,"Mantenimiento Correctivo",1,2,"En espera de cotización","CORRECCIÓN DE FUGAS DE AGUA",Arca,MOTRIZ,Arca
+TZ-232,"La paz",2020-03-05,2020-03-07,,"Mantenimiento Correctivo",0,2,"En espera de cotización","FUGAS DE AIRE POR SUSPENSIÓN Y REALIZAR  IPK...",Arca,MOTRIZ,Arca
+TZ-306,Culiacan,2020-03-02,2020-03-07,0000-00-00,"Mantenimiento Preventivo",35000,5,"En espera de diagnostico","ya recibí el diagnostico y  comenta la agencia que si es la Bomba de combustión de Alta ya les envié la cotización",Arca,MOTRIZ,Arca
+TZ-209,Culiacan,2020-02-29,2020-03-07,0000-00-00,"Mantenimiento Correctivo",35000,7,"En espera de diagnostico","la unidad se ingreso por perdida de potencia al parecer me comentan que lo mas posible es que se ala valvula vgt harán pruebas con otra valvula para estar seguros de que si sea realmente la válvula VG",Arca,MOTRIZ,Arca
+TZ-294,Nogales,2020-03-03,2020-03-06,0000-00-00,"Mantenimiento Correctivo",40000,4,"En espera de diagnostico","Revisión de turbo y VGT",Arca,MOTRIZ,Arca
+TZ-141,Chihuahua,2020-03-05,2020-03-07,,"Mantenimiento Correctivo",4000,2,"En espera de diagnostico","Fuga de agua por el radiador",Arca,MOTRIZ,Arca
+TZ-221,Durango,2020-03-05,2020-03-07,,"Mantenimiento Correctivo",1,2,"En espera de diagnostico","FALLA EN TURBO EN LA CIUDAD DE CALERA ZACATECAS",Arca,MOTRIZ,Arca
+TZ-227,Hermosillo,2019-09-05,2020-03-09,0000-00-00,"Mantenimiento Correctivo",100000,184,"En espera de refacciones","MEDIA REPARACION DE MOTOR. POS ENFRIADOR DE ACEITE PARA FECHA DE ENTREGA, MENCIONA EL PROVEDOR QUE ANTES DEL LUNES LLEGA LA PIEZA",Arca,MOTRIZ,Arca
+TZ-138,Durango,2018-09-15,2020-03-09,0000-00-00,"Mantenimiento Correctivo",562000,539,"En proceso de reparación","Se le realizo reparacion general de motor, ya se termino, pero presenta problemas eléctricos, fufas de aire y de fluidos",Arca,MOTRIZ,Arca
+TZ-132,Culiacan,2019-05-31,2020-03-09,,"Mantenimiento Correctivo",110000,281,"En proceso de reparación","Media reparación de motor.",Arca,MOTRIZ,Arca
+TZ-208,Durango,2020-02-29,2020-03-07,0000-00-00,"Mantenimiento Correctivo",7000,7,"En proceso de reparación","Se realizan trabajo de soldadura en soportes de cofre, esta unidad tiene varios detalles adicionales que se estarán atendiendo algunos en patio y con otros proveedores",Arca,MOTRIZ,Arca
+TZ-163,Mexicali,2019-10-03,2020-03-10,0000-00-00,"Mantenimiento Correctivo",124685,156,"En proceso de reparación","Reparación general de motor (long block)",Arca,MOTRIZ,Arca
+TZ-116,Mazatlan,2019-09-05,2020-03-16,,"Mantenimiento Correctivo",110000,184,"En proceso de reparación","Media reparación de motor por desgaste debido a contaminación de refrigerante en el aceite.",Arca,MOTRIZ,Arca
+TZ-226,Hermosillo,2020-03-06,2020-03-07,0000-00-00,"Mantenimiento Preventivo",6755,1,"En proceso de reparación","Unidad se ingreso a M-1, la unidad se encuentra en proceso de reparación.",Arca,MOTRIZ,Arca
+TZ-233,Mexicali,2020-03-06,2020-03-06,,"Mantenimiento Preventivo",0,1,"En proceso de reparación","SE INGRESA UNIDAD TZ-233 PARA MTTO PREVENTIVO.",Arca,MOTRIZ,Arca
+TZ-215,Chihuahua,2020-03-05,2020-03-07,0000-00-00,"Mantenimiento Preventivo",0,2,"En proceso de reparación","Fuga de diésel por manguera doblada",Arca,MOTRIZ,Arca
+TZ-104,Pepsi,2019-12-10,2020-03-31,,"Mantenimiento Correctivo",200000,88,"En espera de autorización","Media reparación de motor por falla de freno de motor (alcance valvular)","Mexico Pepsi",MOTRIZ,"Mexico Pepsi"
+TZ-289,Pepsi,2020-03-02,2020-03-13,0000-00-00,"Mantenimiento Correctivo",97591,5,"En espera de autorización","Concha quebrada de transmisión, tornillos capados, daño e transmision.","Mexico Pepsi",MOTRIZ,"Mexico Pepsi"
+TZ-279,Pepsi,2020-02-28,2020-03-09,0000-00-00,"Mantenimiento Correctivo",20000,8,"En espera de diagnostico","Calibración de motor
+Corregir fuga aceite riel inyectores
+Revisar fuga aceite diferencial inter
+Revisar indicador temperatura diferencial inter
+Revisar funcionamiento faros niebla, A/C camarote, l","Mexico Pepsi",MOTRIZ,"Mexico Pepsi"
+TZ-268,Pepsi,2020-02-28,2020-03-09,0000-00-00,"Mantenimiento Correctivo",20000,8,"En espera de diagnostico","Unidad incendiada, arneses y módulos","Mexico Pepsi",MOTRIZ,"Mexico Pepsi"
+TZ-260,Pepsi,2020-03-04,2020-03-07,0000-00-00,"Mantenimiento Correctivo",10000,3,"En espera de diagnostico","Esta unidad presenta falla de encendido, acaba de ser rescatada por la agencia, es el segundo reingreso al distribuidor, se esta reportando falla en el motor de arranque.","Mexico Pepsi",MOTRIZ,"Mexico Pepsi"

@@ -1,0 +1,7 @@
+
+#Restringe el acceso a los directorios
+Options All -Indexes
+#para crear nuestras ventanas de errores 
+#carpeta UBICACION_ARCHIVO/NOMBRE_ARCHIVO
+ErrorDocument 404 /ZEMOG/error404.php
+ErrorDocument 403 /ZEMOG/error403.php
