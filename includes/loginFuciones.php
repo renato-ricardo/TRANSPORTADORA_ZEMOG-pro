@@ -34,7 +34,7 @@ class loginFunciones {
 		}
 
 	}
-
+	//Comentarios de pruebas
 	public function seleccionarPorUsuario($usuario,$password){
 
 		$conexion = new db();
