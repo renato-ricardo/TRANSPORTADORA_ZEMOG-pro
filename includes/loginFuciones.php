@@ -35,6 +35,9 @@ class loginFunciones {
 
 	}
 	//Comentarios de pruebas
+	/**Los siguientes comentarios son de prueba ya que las funcion que se esta ejecutando aqui en el login tiene vulnerabilidad */
+
+
 	public function seleccionarPorUsuario($usuario,$password){
 
 		$conexion = new db();
